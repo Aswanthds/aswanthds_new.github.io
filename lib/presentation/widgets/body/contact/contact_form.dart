@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mailer/mailer.dart';
 
-import 'package:mailer/smtp_server.dart';
+import 'package:portfolio/config/extensions.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_enums.dart';
 import '../../../../core/utils/app_extensions.dart';
@@ -44,7 +43,7 @@ class _ContactFormState extends State<ContactForm> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: _getFormWidth(context.width),
+      width: _getFormWidth(context.mediaQueryWidth),
       child: Form(
         key: _formKey,
         child: Column(
@@ -83,7 +82,7 @@ class _ContactFormState extends State<ContactForm> {
                 //sendEmail();
               },
               backgroundColor: AppColors.primaryColor,
-              width: _getFormWidth(context.width),
+              width: _getFormWidth(context.mediaQueryWidth),
             ),
           ],
         ),

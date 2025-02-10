@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:portfolio/config/extensions.dart';
 import '../../../core/utils/app_colors.dart';
 import '../../../core/utils/app_constants.dart';
 import '../../../core/utils/app_enums.dart';
@@ -17,7 +17,16 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColors.appBarColor,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            AppColors.appBarColor,
+            AppColors.appBarColor,
+            AppColors.appBarColor,
+            AppColors.primaryColor,
+          ],
+        ),
+      ),
       padding: EdgeInsets.symmetric(
         horizontal: _getHorizontalPadding(context),
       ),
@@ -25,7 +34,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const DeveloperNameBtn(),
-          context.width > DeviceType.ipad.getMaxWidth()
+          context.mediaQueryWidth > DeviceType.ipad.getMaxWidth()
               ? const HorizontalHeaders()
               : const CustomMenuBtn()
         ],
@@ -34,10 +43,10 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   double _getHorizontalPadding(BuildContext context) {
-    if (context.width < DeviceType.ipad.getMaxWidth()) {
-      return context.width * .03;
+    if (context.mediaQueryWidth < DeviceType.ipad.getMaxWidth()) {
+      return context.mediaQueryWidth * .03;
     } else {
-      return context.width * .08;
+      return context.mediaQueryWidth * .08;
     }
   }
 }

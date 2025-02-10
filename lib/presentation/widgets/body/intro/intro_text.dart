@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/config/extensions.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_enums.dart';
@@ -13,38 +14,39 @@ class IntroText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: context.width < DeviceType.mobile.getMaxWidth()
-          ? CrossAxisAlignment.center
-          : CrossAxisAlignment.start,
+      crossAxisAlignment:
+          context.mediaQueryWidth < DeviceType.mobile.getMaxWidth()
+              ? CrossAxisAlignment.center
+              : CrossAxisAlignment.start,
       children: [
         Text(
           AppStrings.helloIM,
-          style: context.width < DeviceType.ipad.getMaxWidth()
+          style: context.mediaQueryWidth < DeviceType.ipad.getMaxWidth()
               ? AppStyles.s16
               : AppStyles.s32.copyWith(color: AppColors.white),
-          textAlign: _getTextAlign(context.width),
+          textAlign: _getTextAlign(context.mediaQueryWidth),
           softWrap: true,
         ),
         const SizedBox(height: 6),
         Text(
           AppStrings.developerName,
-          style: context.width < DeviceType.ipad.getMaxWidth()
+          style: context.mediaQueryWidth < DeviceType.ipad.getMaxWidth()
               ? AppStyles.s24
               : AppStyles.s52,
-          textAlign: _getTextAlign(context.width),
+          textAlign: _getTextAlign(context.mediaQueryWidth),
           softWrap: true,
         ),
         const SizedBox(height: 12),
         SizedBox(
-          width: context.width < DeviceType.mobile.getMaxWidth()
-              ? context.width - 20
-              : context.width / 2.5,
+          width: context.mediaQueryWidth < DeviceType.mobile.getMaxWidth()
+              ? context.mediaQueryWidth - 20
+              : context.mediaQueryWidth / 2.5,
           child: Text(
             AppStrings.introMsg,
-            style: context.width < DeviceType.ipad.getMaxWidth()
+            style: context.mediaQueryWidth < DeviceType.ipad.getMaxWidth()
                 ? AppStyles.s14
                 : AppStyles.s18,
-            textAlign: _getTextAlign(context.width),
+            textAlign: _getTextAlign(context.mediaQueryWidth),
             softWrap: true,
           ),
         ),

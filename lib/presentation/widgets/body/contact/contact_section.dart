@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/config/extensions.dart';
 import 'package:portfolio/core/utils/app_enums.dart';
 import 'package:portfolio/core/utils/app_extensions.dart';
 
@@ -12,7 +13,7 @@ class ContactSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 80),
-      child: context.width > DeviceType.ipad.getMaxWidth()
+      child: context.mediaQueryWidth > DeviceType.ipad.getMaxWidth()
           ? const Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/config/extensions.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../data/models/responsive_size.dart';
@@ -9,10 +10,10 @@ class CircleImageBorder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final responsiveSize = ResponsiveSize(
-      deviceWidth: context.width,
-      mobileSize: context.width * .62,
-      ipadSize: context.width * .4,
-      smallScreenSize: context.width * .29,
+      deviceWidth: context.mediaQueryWidth,
+      mobileSize: context.mediaQueryWidth * .62,
+      ipadSize: context.mediaQueryWidth * .4,
+      smallScreenSize: context.mediaQueryWidth * .29,
     );
     return Container(
       width: responsiveSize.getSize(),

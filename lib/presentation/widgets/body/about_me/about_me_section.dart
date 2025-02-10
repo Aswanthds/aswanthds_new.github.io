@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/config/extensions.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/custom_divider.dart';
@@ -21,14 +22,14 @@ class AboutMeSection extends StatelessWidget {
           Center(
             child: CustomDivider(
               color: AppColors.white,
-              width: context.width / 4,
+              width: context.mediaQueryWidth / 4,
               height: 2,
             ),
           ),
           const SizedBox(height: 8),
           const ExperienceInfo(),
           const SizedBox(height: 58),
-          
+
           const BasicServicesSectionSection(),
           const SizedBox(height: 80),
           //const DetailedServicesSection(),

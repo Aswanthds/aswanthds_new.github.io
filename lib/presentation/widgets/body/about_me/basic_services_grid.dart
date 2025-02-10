@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/config/extensions.dart';
 
 import '../../../../core/utils/app_constants.dart';
 import '../../../../core/utils/app_enums.dart';
@@ -14,9 +15,9 @@ class BasicServicesGrid extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: _getCrossAxisCount(context.width),
+        crossAxisCount: _getCrossAxisCount(context.mediaQueryWidth),
         crossAxisSpacing: 16,
-        childAspectRatio: _getAspectRatio(context.width),
+        childAspectRatio: _getAspectRatio(context.mediaQueryWidth),
         mainAxisSpacing: 16,
       ),
       itemBuilder: (context, index) {

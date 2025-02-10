@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/config/extensions.dart';
 
 import '../../../../data/models/responsive_size.dart';
 import 'intro_image.dart';
@@ -9,14 +10,14 @@ class IntroCircleImageBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final responsiveSize = ResponsiveSize(
-      deviceWidth: context.width,
-      mobileSize: context.width * .78,
-      ipadSize: context.width * .50,
-      smallScreenSize: context.width * .37,
+      deviceWidth: context.mediaQueryWidth,
+      mobileSize: context.mediaQueryWidth * .78,
+      ipadSize: context.mediaQueryWidth * .50,
+      smallScreenSize: context.mediaQueryWidth * .37,
     );
     return SizedBox(
       height: responsiveSize.getSize(),
-      child: IntroImage(),
+      child: const IntroImage(),
     );
   }
 }

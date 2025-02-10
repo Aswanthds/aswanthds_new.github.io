@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/config/extensions.dart';
 
 import '../../../../core/utils/app_assets.dart';
 import '../../../../data/models/responsive_size.dart';
@@ -9,10 +10,10 @@ class IntroImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final responsiveSize = ResponsiveSize(
-      deviceWidth: context.width,
-      mobileSize: context.width * .55,
-      ipadSize: context.width * .36,
-      smallScreenSize: context.width * .26,
+      deviceWidth: context.mediaQueryWidth,
+      mobileSize: context.mediaQueryWidth * .55,
+      ipadSize: context.mediaQueryWidth * .36,
+      smallScreenSize: context.mediaQueryWidth * .26,
     );
 
     return Positioned(

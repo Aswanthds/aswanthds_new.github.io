@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/config/extensions.dart';
 
 import '../../../../core/utils/app_extensions.dart';
 import '../../../../core/utils/app_enums.dart';
@@ -22,7 +23,7 @@ class AboutMeIntro extends StatelessWidget {
         const SizedBox(height: 8),
         Text(
           AppStrings.aboutMeMsg,
-          style: context.width < DeviceType.mobile.getMaxWidth()
+          style: context.mediaQueryWidth < DeviceType.mobile.getMaxWidth()
               ? AppStyles.s14
               : AppStyles.s18,
           softWrap: true,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:portfolio/config/extensions.dart';
+import 'package:portfolio/core/utils/app_colors.dart';
 
 import '../../blocs/home_bloc/home_bloc.dart';
 import '../app_bar/vertical_headers_builder.dart';
@@ -94,8 +96,20 @@ class _HomeBodyState extends State<HomeBody> {
       },
       child: Stack(
         children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: context.width * .08),
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.center,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.transparent,
+                  AppColors.appBarColor,
+                  AppColors.darkColor,
+                ],
+              ),
+            ),
+            padding:
+                EdgeInsets.symmetric(horizontal: context.mediaQueryWidth * .08),
             child: SingleChildScrollView(
               controller: _controller,
               child: Column(

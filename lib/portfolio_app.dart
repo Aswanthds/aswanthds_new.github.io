@@ -44,7 +44,6 @@ class AuthService {
   static const String loginEndpoint = '/token/';
 
   Future<String> login(String username, String password) async {
-    final dio = Dio();
 
     // Prepare data (assuming username and password login)
     final data = {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/config/extensions.dart';
 
 import '../../../../core/utils/app_enums.dart';
 import '../../../../core/utils/app_extensions.dart';
@@ -14,7 +15,7 @@ class ExperienceInfo extends StatelessWidget {
       children: [
         Text(
           AppStrings.numOfExperience,
-          style: context.width < DeviceType.mobile.getMaxWidth()
+          style: context.mediaQueryWidth < DeviceType.mobile.getMaxWidth()
               ? AppStyles.s32.copyWith(fontSize: 48)
               : AppStyles.s32.copyWith(fontSize: 96),
         ),
@@ -22,7 +23,7 @@ class ExperienceInfo extends StatelessWidget {
         Flexible(
           child: Text(
             AppStrings.experienceMsg,
-            style: _getExpMsgStyle(context.width),
+            style: _getExpMsgStyle(context.mediaQueryWidth),
             softWrap: true,
           ),
         ),

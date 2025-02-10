@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:portfolio/config/extensions.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_enums.dart';
@@ -22,7 +23,7 @@ class IntoActions extends StatelessWidget {
         },
         width: 160,
       ),
-      context.width < DeviceType.ipad.getMaxWidth()
+      context.mediaQueryWidth < DeviceType.ipad.getMaxWidth()
           ? const SizedBox(height: 6)
           : const SizedBox(width: 32),
       CustomButton(
@@ -35,7 +36,7 @@ class IntoActions extends StatelessWidget {
         width: 160,
       ),
     ];
-    return context.width < DeviceType.ipad.getMaxWidth()
+    return context.mediaQueryWidth < DeviceType.ipad.getMaxWidth()
         ? Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: actions,

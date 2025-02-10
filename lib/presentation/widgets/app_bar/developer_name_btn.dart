@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/config/extensions.dart';
 import 'package:universal_html/html.dart' as html;
 
 import '../../../core/utils/app_enums.dart';
@@ -18,9 +19,9 @@ class DeveloperNameBtn extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 13),
         child: SizedBox(
-          width: context.width < DeviceType.ipad.getMaxWidth()
-              ? context.width * .5
-              : context.width * .2,
+          width: context.mediaQueryWidth < DeviceType.ipad.getMaxWidth()
+              ? context.mediaQueryWidth * .5
+              : context.mediaQueryWidth * .2,
           child: FittedBox(
             alignment: Alignment.topLeft,
             child: Text(

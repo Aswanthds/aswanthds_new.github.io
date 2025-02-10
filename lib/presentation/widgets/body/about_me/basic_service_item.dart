@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:portfolio/config/extensions.dart';
 import 'package:portfolio/core/utils/app_colors.dart';
 import 'package:portfolio/core/utils/app_constants.dart';
 import 'package:portfolio/core/utils/app_enums.dart';
@@ -39,7 +40,7 @@ class _BasicServiceItemState extends State<BasicServiceItem> {
             //   height: 48,
             // ),
             // const SizedBox(height: 16),
-            if (context.width > DeviceType.mobile.getMinWidth())
+            if (context.mediaQueryWidth > DeviceType.mobile.getMinWidth())
               FittedBox(
                 child: Column(
                   children: [
