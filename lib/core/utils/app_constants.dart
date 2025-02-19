@@ -61,11 +61,25 @@ abstract class AppConstants {
   ];
   static const List<Project> projects = [
     Project(
-        name: 'I Pick U Dating App',
+      name: 'Recipe Book (Started)',
+      imageUrl:
+          'https://m.media-amazon.com/images/I/51LGD300xqL._UF1000,1000_QL80_.jpg',
+      description:
+          'Its a recipe book thats made everyone a experience cook made using flutter. ',
+    ),
+    Project(
+      name: 'Neram Dating App (On going)',
+      imageUrl:
+          'https://media.licdn.com/dms/image/v2/D562DAQHvr_5MKs8Zlw/profile-treasury-image-shrink_1920_1920/profile-treasury-image-shrink_1920_1920/0/1739361158319?e=1740567600&v=beta&t=Gc6EQGjvfRHHd2iu4ItccWXJ_F5mhfqzRaZISB1LNqI',
+      description:
+          'A Premium colaborating project with other 3 of my friends. A Dating application made using the flutter and firebase and other technologies ,an application for the people of kerala.',
+    ),
+    Project(
+        name: 'Kootu Dating App',
         imageUrl:
-            'https://play-lh.googleusercontent.com/q0y-_lJXIcJctGVTztkbiafB7oQEcsjNQnxoZ18T1Ky78Zr79i9W-2HeOjJ2f68vK7Q=w240-h480',
+            'https://play-lh.googleusercontent.com/-bSSmoxq8G2u3iq76Mz7zqBo12DV54W7eo7GjJ2cZAMZRFrqzB3jaDbOCKlK1SOzLCDq=w240-h480-rw',
         description:
-            'A Dating application made using the flutter and firebase utilities to enhance the backend for Android devices.',
+            'An Simple Free User friendly Dating application for android users made using the flutter and firebase utilities to enhance the backend for Android devices.',
         githubRepoLink: 'https://github.com/Aswanthds/ipicku_dating_app',
         googlePlay:
             'https://play.google.com/store/apps/details?id=com.aswanth.ipicku',
@@ -75,7 +89,7 @@ abstract class AppConstants {
       imageUrl:
           'https://play-lh.googleusercontent.com/sJhW7ubzKGJ1moYmSxd6X9o2scsBxLTRvgvvjtEd2nOHaDG0mYQIY4gNbeST-06XfYg=w240-h480',
       description:
-          'Social media application for share posts and stories with people, One-to-one chat, Share reels videos',
+          'An offline Application made for android users to play the videos in their devices',
       githubRepoLink: 'https://github.com/Aswanthds/avideo_video_player.git',
       googlePlay:
           'https://play.google.com/store/apps/details?id=com.avideo.avideo_video_player',

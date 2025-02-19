@@ -27,7 +27,10 @@ class _BasicServiceItemState extends State<BasicServiceItem> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(10),
-      color: itemColor,
+      decoration: BoxDecoration(
+        color: itemColor,
+        borderRadius: BorderRadius.circular(12.0),
+      ),
       child: MouseRegion(
         onEnter: _onEnter,
         onExit: _onExit,
@@ -46,7 +49,7 @@ class _BasicServiceItemState extends State<BasicServiceItem> {
                   children: [
                     Text(
                       widget.service.heading,
-                      style: AppStyles.s24,
+                      style: AppStyles.s18,
                       // minFontSize: 8,
                       textAlign: TextAlign.justify,
                     ),
@@ -58,7 +61,9 @@ class _BasicServiceItemState extends State<BasicServiceItem> {
                             (index) => Text(
                                   AppConstants
                                       .services[widget.mainIndx].values[index],
-                                  style: AppStyles.s16,
+                                  style: AppStyles.s16.copyWith(
+                                    fontWeight: FontWeight.w300,
+                                  ),
                                   textAlign: TextAlign.left,
                                 ))),
                   ],

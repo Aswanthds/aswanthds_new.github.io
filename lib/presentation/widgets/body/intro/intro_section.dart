@@ -18,7 +18,7 @@ class IntroSection extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: 45,
               children: [
-                IntroCircleImageBox(),
+                // IntroCircleImageBox(),
                 IntroText(),
               ],
             )
@@ -27,7 +27,7 @@ class IntroSection extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 IntroText(),
-                IntroCircleImageBox(),
+                // IntroCircleImageBox(),
               ],
             ),
     );

@@ -16,27 +16,27 @@ class ContactForm extends StatefulWidget {
 
 class _ContactFormState extends State<ContactForm> {
   late GlobalKey<FormState> _formKey;
-  late TextEditingController _emailController;
-  late TextEditingController _messageController;
-  late TextEditingController _nameController;
-  late TextEditingController _subjectController;
+  // late TextEditingController _emailController;
+  // late TextEditingController _messageController;
+  // late TextEditingController _nameController;
+  // late TextEditingController _subjectController;
 
   @override
   void initState() {
     super.initState();
     _formKey = GlobalKey();
-    _emailController = TextEditingController();
-    _messageController = TextEditingController();
-    _nameController = TextEditingController();
-    _subjectController = TextEditingController();
+    // _emailController = TextEditingController();
+    // _messageController = TextEditingController();
+    // _nameController = TextEditingController();
+    // _subjectController = TextEditingController();
   }
 
   @override
   void dispose() {
-    _emailController.dispose();
-    _messageController.dispose();
-    _nameController.dispose();
-    _subjectController.dispose();
+    // _emailController.dispose();
+    // _messageController.dispose();
+    // _nameController.dispose();
+    // _subjectController.dispose();
     super.dispose();
   }
 
@@ -49,41 +49,14 @@ class _ContactFormState extends State<ContactForm> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            TextFormField(
-              controller: _nameController,
-              style: AppStyles.s14,
-              decoration: const InputDecoration(labelText: 'Name'),
-            ),
-            const SizedBox(height: 12),
-            TextFormField(
-              controller: _emailController,
-              style: AppStyles.s14,
-              decoration: const InputDecoration(labelText: 'E-mail'),
-            ),
-            const SizedBox(height: 12),
-            TextFormField(
-              controller: _subjectController,
-              style: AppStyles.s14,
-              decoration: const InputDecoration(labelText: 'Subject'),
-            ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: _messageController,
-              maxLines: 5,
-              style: AppStyles.s14,
-              decoration: const InputDecoration(
-                labelText: 'Type a message here...',
-              ),
-            ),
-            const SizedBox(height: 16),
-            CustomButton(
-              label: 'Submit',
-              onPressed: () {
-                //sendEmail();
-              },
-              backgroundColor: AppColors.primaryColor,
-              width: _getFormWidth(context.mediaQueryWidth),
-            ),
+            // CustomButton(
+            //   label: 'Get in Touch',
+            //   onPressed: () {
+            //     //sendEmail();
+            //   },
+            //   backgroundColor: AppColors.primaryColor,
+            //   width: _getFormWidth(context.mediaQueryWidth),
+            // ),
           ],
         ),
       ),

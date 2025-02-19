@@ -18,11 +18,33 @@ class ProjectsGrid extends StatelessWidget {
         crossAxisCount: _getCrossAxisCount(context.mediaQueryWidth),
         crossAxisSpacing: 16,
         mainAxisSpacing: 16,
+        mainAxisExtent: _getMainAxisExtent(context.mediaQueryWidth),
       ),
       itemBuilder: (context, index) {
-        return ProjectItem(
-          project: AppConstants.projects[index],
-        );
+        if (context.mediaQueryWidth < DeviceType.mobile.getMaxWidth()) {
+          return ProjectItem(
+            project: AppConstants.projects[index],
+          );
+        } else if (context.mediaQueryWidth < DeviceType.ipad.getMaxWidth()) {
+          return ProjectItem(
+            project: AppConstants.projects[index],
+          );
+        } else if (context.mediaQueryWidth <
+            DeviceType.smallScreenLaptop.getMaxWidth()) {
+          return SizedBox(
+            height: 200,
+            child: ProjectItemWeb(
+              project: AppConstants.projects[index],
+            ),
+          );
+        } else {
+          return SizedBox(
+            height: 200,
+            child: ProjectItemWeb(
+              project: AppConstants.projects[index],
+            ),
+          );
+        }
       },
       itemCount: AppConstants.projects.length,
     );
@@ -38,6 +60,18 @@ class ProjectsGrid extends StatelessWidget {
       return 3;
     } else {
       return numOfServices > 3 ? 3 : numOfServices;
+    }
+  }
+
+  double? _getMainAxisExtent(double deviceWidth) {
+    if (deviceWidth < DeviceType.mobile.getMaxWidth()) {
+      return null;
+    } else if (deviceWidth < DeviceType.ipad.getMaxWidth()) {
+      return deviceWidth;
+    } else if (deviceWidth < DeviceType.smallScreenLaptop.getMaxWidth()) {
+      return 270;
+    } else {
+      return 320;
     }
   }
 }

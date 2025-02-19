@@ -29,7 +29,7 @@ class ContactSection extends StatelessWidget {
               children: [
                 ContactIntro(),
                 SizedBox(height: 32),
-                ContactForm(),
+                // ContactForm(),
               ],
             ),
     );

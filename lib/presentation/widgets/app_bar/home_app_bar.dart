@@ -23,7 +23,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             AppColors.appBarColor,
             AppColors.appBarColor,
             AppColors.appBarColor,
-            AppColors.primaryColor,
+            AppColors.appBarColor.withAlpha(170),
           ],
         ),
       ),
