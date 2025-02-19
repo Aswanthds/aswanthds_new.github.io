@@ -36,11 +36,12 @@ class ProjectImageWeb extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Flexible(
-      flex: 2,
+      flex: 1,
       fit: FlexFit.tight,
       child: CachedNetworkImage(
         imageUrl: imageUrl,
-        width: context.mediaQueryWidth * 0.5,
+        width: (context.mediaQueryWidth * 0.01) * 0.4,
+        height: (context.mediaQueryWidth * 0.01) * 10,
         fit: BoxFit.cover,
         errorWidget: (context, url, error) {
           return Icon(

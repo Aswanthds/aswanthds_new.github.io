@@ -1,4 +1,4 @@
-enum AppBarHeaders { home, aboutMe, projects, contact }
+enum AppBarHeaders { home, aboutMe, projects, contact , resume }
 
 enum AppBarHeadersAxis { horizontal, vertical }
 

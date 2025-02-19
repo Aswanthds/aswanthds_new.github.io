@@ -34,7 +34,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const DeveloperNameBtn(),
-          context.mediaQueryWidth > DeviceType.ipad.getMaxWidth()
+          context.mediaQueryWidth >= DeviceType.smallScreenLaptop.getMaxWidth()
               ? const HorizontalHeaders()
               : const CustomMenuBtn()
         ],
@@ -43,7 +43,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   double _getHorizontalPadding(BuildContext context) {
-    if (context.mediaQueryWidth < DeviceType.ipad.getMaxWidth()) {
+    if (context.mediaQueryWidth <= DeviceType.ipad.getMaxWidth()) {
       return context.mediaQueryWidth * .03;
     } else {
       return context.mediaQueryWidth * .08;

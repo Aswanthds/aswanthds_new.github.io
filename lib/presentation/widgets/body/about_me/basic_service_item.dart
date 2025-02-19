@@ -45,27 +45,38 @@ class _BasicServiceItemState extends State<BasicServiceItem> {
             // const SizedBox(height: 16),
             if (context.mediaQueryWidth > DeviceType.mobile.getMinWidth())
               FittedBox(
+                fit: BoxFit.contain,
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       widget.service.heading,
-                      style: AppStyles.s18,
+                      style: AppStyles.s20,
                       // minFontSize: 8,
                       textAlign: TextAlign.justify,
                     ),
-                    Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: List<Widget>.generate(
-                            AppConstants
-                                .services[widget.mainIndx].values.length,
-                            (index) => Text(
-                                  AppConstants
-                                      .services[widget.mainIndx].values[index],
-                                  style: AppStyles.s16.copyWith(
-                                    fontWeight: FontWeight.w300,
-                                  ),
-                                  textAlign: TextAlign.left,
-                                ))),
+                    // Column(
+                    //     mainAxisSize: MainAxisSize.min,
+                    //     children: List<Widget>.generate(
+                    //         AppConstants
+                    //             .services[widget.mainIndx].values.length,
+                    //         (index) => Text(
+                    //               AppConstants
+                    //                   .services[widget.mainIndx].values[index],
+                    //               style: AppStyles.s14,
+                    //               textAlign: TextAlign.left,
+                    //             ))),
+                    SizedBox(
+                      width: 200,
+                      child: Text(
+                        AppConstants.services[widget.mainIndx].values
+                            .join(', '),
+                        maxLines: 3,
+                        style: AppStyles.s14,
+                        textAlign: TextAlign.center,
+                      ),
+                    )
                   ],
                 ),
               ),

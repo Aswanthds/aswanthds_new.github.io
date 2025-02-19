@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../core/utils/app_extensions.dart';
 
+import '../../../core/utils/app_extensions.dart';
+import 'package:universal_html/html.dart' as html;
 import '../../../core/utils/app_colors.dart';
 import '../../../core/utils/app_enums.dart';
 import '../../../core/utils/app_styles.dart';
@@ -15,8 +16,14 @@ class CustomHeaderBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {
+      onPressed: () async {
         context.read<HomeBloc>().add(ChangeAppBarHeadersIndex(headerIndex));
+        if (headerIndex == 4) {
+          var uri =
+              "https://drive.google.com/file/d/1Dex1qExAsEc22lEAMBJaCmOo_ghXvHFQ/view";
+
+          html.window.open(uri, '_blank');
+        }
       },
       style: TextButton.styleFrom(
         textStyle: AppStyles.s16,

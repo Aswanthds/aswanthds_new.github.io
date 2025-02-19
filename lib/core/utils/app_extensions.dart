@@ -13,6 +13,8 @@ extension AppBarHeaderExtension on AppBarHeaders {
         return 'Projects';
       case AppBarHeaders.contact:
         return 'Contact';
+      case AppBarHeaders.resume:
+        return 'Resume';
     }
   }
 }

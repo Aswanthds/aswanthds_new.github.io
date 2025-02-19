@@ -69,10 +69,7 @@ class ProjectItemWeb extends StatelessWidget {
           Row(
             spacing: 12.0,
             children: [
-              Expanded(
-                flex: 1,
-                child: ProjectImageWeb(imageUrl: project.imageUrl),
-              ),
+              ProjectImageWeb(imageUrl: project.imageUrl),
               Expanded(
                 flex: 3,
                 child: Column(
@@ -81,11 +78,11 @@ class ProjectItemWeb extends StatelessWidget {
                     Text(
                       project.name,
                       style:
-                          AppStyles.s24.copyWith(color: AppColors.primaryColor),
+                          AppStyles.s20.copyWith(color: AppColors.primaryColor),
                     ),
                     AutoSizeText(
                       project.description,
-                      style: AppStyles.s16,
+                      style: AppStyles.s14,
                       minFontSize: 12,
                       maxLines: 6,
                     ),

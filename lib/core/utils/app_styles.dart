@@ -24,12 +24,17 @@ abstract class AppStyles {
     fontSize: 24,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle s18 = TextStyle(
+  static TextStyle s20 = GoogleFonts.outfit(
+    color: AppColors.white,
+    fontSize: 20,
+    fontWeight: FontWeight.w500,
+  );
+  static TextStyle s18 = GoogleFonts.outfit(
     color: AppColors.white,
     fontSize: 18,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle s17 = TextStyle(
+  static TextStyle s17 = GoogleFonts.outfit(
     color: AppColors.white,
     fontSize: 17,
     fontWeight: FontWeight.w500,
