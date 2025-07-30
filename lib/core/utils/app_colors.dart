@@ -9,5 +9,8 @@ abstract class AppColors {
   static Color darkColor = const Color(0xff333333);
   static Color scaffoldColor = const Color(0xFF050505);
   static Color appBarColor = const Color(0xff282833);
-
+  static const Color warmYellow = Color(0xFFF0DA69); // Hex: F0DA69
+  static const Color softMint = Color(0xFFA3DAC2); // Hex: A3DAC2
+  static const Color blushPink = Color(0xFFE7C2D4); // Hex: E7C2D4
+  static const Color skyBlue = Color(0xFF92BDF6);
 }

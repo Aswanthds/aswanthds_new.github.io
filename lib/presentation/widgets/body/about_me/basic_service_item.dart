@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:portfolio/config/extensions.dart';
 import 'package:portfolio/core/utils/app_colors.dart';
 import 'package:portfolio/core/utils/app_constants.dart';
@@ -10,8 +11,7 @@ import 'package:portfolio/data/models/custom_service.dart';
 
 class BasicServiceItem extends StatefulWidget {
   const BasicServiceItem(
-      {Key? key, required this.service, required this.mainIndx})
-      : super(key: key);
+      {super.key, required this.service, required this.mainIndx});
 
   final Skills service;
   final int mainIndx;
@@ -38,11 +38,12 @@ class _BasicServiceItemState extends State<BasicServiceItem> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // SvgPicture.asset(
-            //   widget.service.logo,
-            //   height: 48,
-            // ),
-            // const SizedBox(height: 16),
+            SvgPicture.asset(
+              widget.service.logo,
+              height: 40,
+              colorFilter: ColorFilter.mode(AppColors.white, BlendMode.srcIn),
+            ),
+            const SizedBox(height: 14),
             if (context.mediaQueryWidth > DeviceType.mobile.getMinWidth())
               FittedBox(
                 fit: BoxFit.contain,

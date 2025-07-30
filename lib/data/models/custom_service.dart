@@ -13,12 +13,12 @@ class CustomService {
 
 class Skills{
     final String heading;
-  //final String logo;
+  final String logo;
   final List<String> values;
 
   const Skills({
     required this.heading,
-    // required this.logo,
+    required this.logo,
     required this.values,
   });
 

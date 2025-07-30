@@ -26,9 +26,11 @@ class ProjectItem extends StatelessWidget {
           ProjectImage(imageUrl: project.imageUrl),
           const SizedBox(height: 16),
           FittedBox(
-            child: Text(
+            child: AutoSizeText(
               project.name,
-              style: AppStyles.s24.copyWith(color: AppColors.primaryColor),
+              minFontSize: 10,
+              maxFontSize: 14,
+              style: AppStyles.s20.copyWith(color: AppColors.primaryColor),
             ),
           ),
           const SizedBox(height: 8),
@@ -36,7 +38,8 @@ class ProjectItem extends StatelessWidget {
             child: AutoSizeText(
               project.description,
               style: AppStyles.s18,
-              minFontSize: 12,
+              minFontSize: 10,
+              maxFontSize: 14,
               maxLines: 4,
             ),
           ),
@@ -69,14 +72,18 @@ class ProjectItemWeb extends StatelessWidget {
           Row(
             spacing: 12.0,
             children: [
-              ProjectImageWeb(imageUrl: project.imageUrl),
+              ProjectImageWeb(
+                imageUrl: project.imageUrl,
+              ),
               Expanded(
                 flex: 3,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    AutoSizeText(
                       project.name,
+                      minFontSize: 10,
+                      maxFontSize: 14,
                       style:
                           AppStyles.s20.copyWith(color: AppColors.primaryColor),
                     ),

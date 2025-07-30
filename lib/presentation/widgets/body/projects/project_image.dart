@@ -10,21 +10,19 @@ class ProjectImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      flex: 2,
-      fit: FlexFit.tight,
-      child: CachedNetworkImage(
-        imageUrl: imageUrl,
-        width: double.infinity,
-        fit: BoxFit.cover,
-        errorWidget: (context, url, error) {
-          return Icon(
-            Icons.error,
-            color: AppColors.darkColor,
-            size: 50,
-          );
-        },
-      ),
+    return CachedNetworkImage(
+      imageUrl: imageUrl,
+      width: context.mediaQueryWidth,
+      height: context.mediaQueryWidth - 200,
+      fit: BoxFit.cover,
+      placeholder: (context, url) => CircularProgressIndicator(),
+      errorWidget: (context, url, error) {
+        return Icon(
+          Icons.error,
+          color: AppColors.darkColor,
+          size: 50,
+        );
+      },
     );
   }
 }
@@ -35,22 +33,19 @@ class ProjectImageWeb extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      flex: 1,
-      fit: FlexFit.tight,
-      child: CachedNetworkImage(
-        imageUrl: imageUrl,
-        width: (context.mediaQueryWidth * 0.01) * 0.4,
-        height: (context.mediaQueryWidth * 0.01) * 10,
-        fit: BoxFit.cover,
-        errorWidget: (context, url, error) {
-          return Icon(
-            Icons.error,
-            color: AppColors.darkColor,
-            size: 50,
-          );
-        },
-      ),
+    return CachedNetworkImage(
+      imageUrl: imageUrl,
+      width: (context.mediaQueryWidth * 0.01) * 5,
+      height: (context.mediaQueryWidth * 0.01) * 10,
+      placeholder: (context, url) => CircularProgressIndicator(),
+      fit: BoxFit.cover,
+      errorWidget: (context, url, error) {
+        return Icon(
+          Icons.error,
+          color: AppColors.darkColor,
+          size: 50,
+        );
+      },
     );
   }
 }

@@ -49,7 +49,7 @@ class BasicServicesGrid extends StatelessWidget {
     } else if (deviceWidth < DeviceType.ipad.getMinWidth()) {
       return 1.4;
     } else if (deviceWidth < DeviceType.smallScreenLaptop.getMaxWidth()) {
-      return 1.5;
+      return 1.42;
     } else {
       return 1.6;
     }

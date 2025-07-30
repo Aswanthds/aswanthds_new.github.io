@@ -24,28 +24,28 @@ abstract class AppStyles {
     fontSize: 24,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle s20 = GoogleFonts.outfit(
+  static TextStyle s20 = GoogleFonts.josefinSans(
     color: AppColors.white,
     fontSize: 20,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle s18 = GoogleFonts.outfit(
+  static TextStyle s18 = GoogleFonts.josefinSans(
     color: AppColors.white,
     fontSize: 18,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle s17 = GoogleFonts.outfit(
+  static TextStyle s17 = GoogleFonts.josefinSans(
     color: AppColors.white,
     fontSize: 17,
     fontWeight: FontWeight.w500,
   );
 
-  static TextStyle s16 = GoogleFonts.outfit(
+  static TextStyle s16 = GoogleFonts.josefinSans(
     color: AppColors.white,
     fontSize: 16,
     fontWeight: FontWeight.w500,
   );
-  static TextStyle s14 = TextStyle(
+  static TextStyle s14 = GoogleFonts.josefinSans(
     color: AppColors.white,
     fontSize: 14,
     fontWeight: FontWeight.w500,
