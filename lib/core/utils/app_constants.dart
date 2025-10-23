@@ -62,11 +62,11 @@ abstract class AppConstants {
   ];
   static const List<Project> projects = [
     Project(
-      name: 'Recipe Book (Started)',
+      name: 'Cyclea Period Tracker (Started)',
       imageUrl:
-          'https://m.media-amazon.com/images/I/51LGD300xqL._UF1000,1000_QL80_.jpg',
+          'https://raphacure-public-images.s3.ap-south-1.amazonaws.com/110118-1761184112800.png',
       description:
-          'Its a recipe book thats made everyone a experience cook made using flutter. ',
+          "An AI enhanced period tracker app, made to track Womens's health & Period Data",
     ),
     // Project(
     //   name: 'Neram Dating App (On going)',
@@ -78,7 +78,7 @@ abstract class AppConstants {
     Project(
       name: 'Kootu Dating App',
       imageUrl:
-          'https://drive.google.com/uc?export=view&id=1JTxMJhIywWTa8qPaFC6HccLGVMEGQIKK',
+          'https://raphacure-public-images.s3.ap-south-1.amazonaws.com/110118-1761183891746.png',
       description:
           'An Simple Free User friendly Dating application for android users made using the flutter and firebase utilities to enhance the backend for Android devices.',
       githubRepoLink: 'https://github.com/Aswanthds/ipicku_dating_app',
@@ -89,7 +89,7 @@ abstract class AppConstants {
     Project(
       name: 'Avideo Video Player',
       imageUrl:
-          'https://play-lh.googleusercontent.com/sJhW7ubzKGJ1moYmSxd6X9o2scsBxLTRvgvvjtEd2nOHaDG0mYQIY4gNbeST-06XfYg=w240-h480',
+          'https://raphacure-public-images.s3.ap-south-1.amazonaws.com/110118-1761183891751.png',
       description:
           'An offline Application made for android users to play the videos in their devices',
       githubRepoLink: 'https://github.com/Aswanthds/avideo_video_player.git',

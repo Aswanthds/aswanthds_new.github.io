@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:portfolio/config/extensions.dart';
 import '../../../core/utils/app_colors.dart';
@@ -16,28 +18,28 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            AppColors.appBarColor,
-            AppColors.appBarColor,
-            AppColors.appBarColor,
-            AppColors.appBarColor.withAlpha(170),
-          ],
+    return ClipRRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+        child: Container(
+          height: 72,
+          padding: EdgeInsets.symmetric(
+            horizontal: _getHorizontalPadding(context),
+          ),
+          decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.1), // subtle tint
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const DeveloperNameBtn(),
+              context.mediaQueryWidth >=
+                      DeviceType.smallScreenLaptop.getMaxWidth()
+                  ? const HorizontalHeaders()
+                  : const CustomMenuBtn(),
+            ],
+          ),
         ),
-      ),
-      padding: EdgeInsets.symmetric(
-        horizontal: _getHorizontalPadding(context),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const DeveloperNameBtn(),
-          context.mediaQueryWidth >= DeviceType.smallScreenLaptop.getMaxWidth()
-              ? const HorizontalHeaders()
-              : const CustomMenuBtn()
-        ],
       ),
     );
   }

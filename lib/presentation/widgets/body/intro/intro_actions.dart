@@ -48,8 +48,7 @@ class IntoActions extends StatelessWidget {
         onPressed: () {
           context.read<HomeBloc>().add(ChangeAppBarHeadersIndex(2));
           var uri =
-              "https://drive.google.com/file/d/1g_3RbNGp0A6oM_OerR7kU42FQjSps3AF/view";
-
+              "https://drive.google.com/file/d/1jq862BNWWPyQlo-2vM4KIO-hm401QhF0/view";
           html.window.open(uri, '_blank');
         },
         width: 160,

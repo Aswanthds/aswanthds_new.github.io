@@ -33,19 +33,22 @@ class ProjectImageWeb extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CachedNetworkImage(
-      imageUrl: imageUrl,
-      width: (context.mediaQueryWidth * 0.01) * 5,
-      height: (context.mediaQueryWidth * 0.01) * 10,
-      placeholder: (context, url) => CircularProgressIndicator(),
-      fit: BoxFit.cover,
-      errorWidget: (context, url, error) {
-        return Icon(
-          Icons.error,
-          color: AppColors.darkColor,
-          size: 50,
-        );
-      },
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(16),
+      child: CachedNetworkImage(
+        imageUrl: imageUrl,
+        width: (context.mediaQueryWidth * 0.01) * 9,
+        height: (context.mediaQueryWidth * 0.01) * 9,
+        placeholder: (context, url) => CircularProgressIndicator(),
+        fit: BoxFit.fill,
+        errorWidget: (context, url, error) {
+          return Icon(
+            Icons.error,
+            color: AppColors.darkColor,
+            size: 50,
+          );
+        },
+      ),
     );
   }
 }
