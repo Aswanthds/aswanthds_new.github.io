@@ -15,11 +15,11 @@ abstract class AppConstants {
       description:
           'Engineered high-availability, cross-platform applications serving a production user base of 10K+ downloads.',
       bulletPoints: [
-        'Engineered high-availability, cross-platform applications serving a production user base of 10K+ downloads on Google Play and 1K+ on the App Store.',
-        'Integrated complex microservices utilizing GraphQL and REST API for eﬃcient data fetching.',
-        'Integrated third-party SDKs including Razorpay for payments and ZegoCloud for video consultations.',
-        'Collaborated with cross-functional teams to define features and resolve critical production issues.',
-        'Managed the full deployment lifecycle for Android and iOS, handling security keys and store compliance.',
+        'Engineered high-availability apps for 10K+ users on Play Store & App Store.',
+        'Integrated microservices using GraphQL and REST APIs.',
+        'Implemented Razorpay for payments and ZegoCloud for video calls.',
+        'Collaborated with teams to resolve critical production issues.',
+        'Managed full deployment lifecycle for Android and iOS.',
       ],
       googlePlay:
           'https://play.google.com/store/apps/details?id=com.cognonta.raphacure',

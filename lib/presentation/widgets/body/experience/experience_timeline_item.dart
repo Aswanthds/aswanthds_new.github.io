@@ -101,7 +101,6 @@ class _ExperienceTimelineItemState extends State<ExperienceTimelineItem> {
                           ),
                         ),
                         child: Column(
-                          // mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             // Header: Role, Company and Period
