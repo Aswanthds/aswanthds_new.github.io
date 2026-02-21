@@ -18,9 +18,7 @@ abstract class AppConstants {
         'Engineered high-availability, cross-platform applications serving a production user base of 10K+ downloads on Google Play and 1K+ on the App Store.',
         'Integrated complex microservices utilizing GraphQL and REST API for eﬃcient data fetching.',
         'Integrated third-party SDKs including Razorpay for payments and ZegoCloud for video consultations.',
-        'Managed state synchronization and complex workflows using Provider, prioritizing scalability and memory optimization.',
         'Collaborated with cross-functional teams to define features and resolve critical production issues.',
-        'Mentored junior developers on best practices and conducted code reviews.',
         'Managed the full deployment lifecycle for Android and iOS, handling security keys and store compliance.',
       ],
       googlePlay:

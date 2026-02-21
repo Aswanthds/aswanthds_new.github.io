@@ -38,19 +38,40 @@ class _HomeBodyState extends State<HomeBody> {
 
   void _initListenerForInteractWithHeaderIndex() {
     _controller.addListener(() {
-      if (introKey.currentContext == null ||
-          aboutKey.currentContext == null ||
-          experienceKey.currentContext == null ||
-          projectKey.currentContext == null) {
-        return;
-      }
+      final introContext = introKey.currentContext;
+      final aboutContext = aboutKey.currentContext;
+      final experienceContext = experienceKey.currentContext;
+      final projectContext = projectKey.currentContext;
 
-      double introHeight = introKey.currentContext!.size!.height;
-      double aboutHeight = aboutKey.currentContext!.size!.height;
-      double experienceHeight = experienceKey.currentContext!.size!.height;
-      double projectHeight = projectKey.currentContext!.size!.height;
+      if (introContext == null ||
+          aboutContext == null ||
+          experienceContext == null ||
+          projectContext == null)
+        return;
+
+      final introBox = introContext.findRenderObject() as RenderBox?;
+      final aboutBox = aboutContext.findRenderObject() as RenderBox?;
+      final experienceBox = experienceContext.findRenderObject() as RenderBox?;
+      final projectBox = projectContext.findRenderObject() as RenderBox?;
+
+      if (introBox == null ||
+          !introBox.hasSize ||
+          aboutBox == null ||
+          !aboutBox.hasSize ||
+          experienceBox == null ||
+          !experienceBox.hasSize ||
+          projectBox == null ||
+          !projectBox.hasSize)
+        return;
+
+      double introHeight = introBox.size.height;
+      double aboutHeight = aboutBox.size.height;
+      double experienceHeight = experienceBox.size.height;
+      double projectHeight = projectBox.size.height;
 
       double controllerHeight = _controller.offset;
+
+      if (!_controller.hasClients) return;
 
       if (_controller.position.extentAfter == 0.0) {
         context.read<HomeBloc>().add(ChangeAppBarHeadersColorByColor(4));
@@ -109,7 +130,7 @@ class _HomeBodyState extends State<HomeBody> {
               targetKey.currentContext!,
               duration: duration,
               curve: curve,
-              alignment: 0.0, // Scroll to the very top of the section
+              alignment: 0.0,
             );
           }
         }
@@ -170,6 +191,7 @@ class _HomeBodyState extends State<HomeBody> {
               builder: (context, child) {
                 double progress = 0.0;
                 if (_controller.hasClients &&
+                    _controller.position.hasContentDimensions &&
                     _controller.position.maxScrollExtent > 0) {
                   progress =
                       _controller.offset / _controller.position.maxScrollExtent;

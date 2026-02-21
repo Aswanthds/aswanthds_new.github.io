@@ -89,7 +89,8 @@ class _ExperienceTimelineItemState extends State<ExperienceTimelineItem> {
                     child: BackdropFilter(
                       filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                       child: Container(
-                        padding: EdgeInsets.all(isMobile ? 16 : 24),
+                        padding: EdgeInsets.all(isMobile ? 16 : 20),
+                        clipBehavior: .antiAlias,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           color: Colors.white.withOpacity(0.03),
@@ -99,10 +100,9 @@ class _ExperienceTimelineItemState extends State<ExperienceTimelineItem> {
                                 : Colors.white.withOpacity(0.05),
                           ),
                         ),
-                        child: Wrap(
-                          spacing: 8,
+                        child: Column(
                           // mainAxisSize: MainAxisSize.min,
-                          // crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             // Header: Role, Company and Period
                             isMobile

@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/config/extensions.dart';
 import 'package:portfolio/core/utils/app_colors.dart';
@@ -70,10 +69,10 @@ class _IntroImageState extends State<IntroImage> with TickerProviderStateMixin {
                   shape: BoxShape.circle,
                   gradient: SweepGradient(
                     colors: [
-                      AppColors.primaryColor.withValues(alpha: .0),
-                      AppColors.primaryColor.withValues(alpha: 0.4),
-                      AppColors.darkColor.withValues(alpha: 0.4),
-                      AppColors.darkColor.withValues(alpha: 0.0),
+                      AppColors.primaryColor.withOpacity(0.0),
+                      AppColors.primaryColor.withOpacity(0.4),
+                      AppColors.darkColor.withOpacity(0.4),
+                      AppColors.darkColor.withOpacity(0.0),
                     ],
                     stops: const [0.0, 0.4, 0.6, 1.0],
                   ),
@@ -123,12 +122,12 @@ class _IntroImageState extends State<IntroImage> with TickerProviderStateMixin {
         image: true,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(size),
-          child: CachedNetworkImage(
-            imageUrl: AppAssets.devImg,
+          child: Image.asset(
+            AppAssets.devImg,
             width: size,
             height: size,
             fit: BoxFit.contain,
-            errorWidget: (context, error, stackTrace) =>
+            errorBuilder: (context, error, stackTrace) =>
                 Icon(Icons.person, size: size, color: AppColors.white),
           ),
         ),
