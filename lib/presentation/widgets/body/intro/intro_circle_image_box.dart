@@ -15,9 +15,7 @@ class IntroCircleImageBox extends StatelessWidget {
       ipadSize: context.mediaQueryWidth * .50,
       smallScreenSize: context.mediaQueryWidth * .37,
     );
-    return SizedBox(
-      height: responsiveSize.getSize(),
-      child: const IntroImage(),
-    );
+    final size = responsiveSize.getSize();
+    return SizedBox(height: size, width: size, child: const IntroImage());
   }
 }

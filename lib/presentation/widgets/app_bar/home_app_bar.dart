@@ -27,7 +27,13 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             horizontal: _getHorizontalPadding(context),
           ),
           decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.1), // subtle tint
+            color: AppColors.appBarColor,
+            border: Border(
+              bottom: BorderSide(
+                color: Colors.white.withOpacity(0.05),
+                width: 1,
+              ),
+            ),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

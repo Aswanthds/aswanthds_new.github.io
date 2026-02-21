@@ -18,7 +18,7 @@ class CustomHeaderBtn extends StatelessWidget {
     return TextButton(
       onPressed: () async {
         context.read<HomeBloc>().add(ChangeAppBarHeadersIndex(headerIndex));
-        if (headerIndex == 4) {
+        if (headerIndex == 5) {
           var uri =
               "https://drive.google.com/file/d/1jq862BNWWPyQlo-2vM4KIO-hm401QhF0/view";
 
@@ -33,13 +33,8 @@ class CustomHeaderBtn extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 18,
-          vertical: 26,
-        ),
-        child: Text(
-          AppBarHeaders.values[headerIndex].getString(),
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 26),
+        child: Text(AppBarHeaders.values[headerIndex].getString()),
       ),
     );
   }

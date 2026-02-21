@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/body/home_body.dart';
 import '../widgets/app_bar/home_app_bar.dart';
+import '../../core/widgets/custom_cursor.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -9,7 +10,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: HomeAppBar(),
-      body: HomeBody(),
+      body: CustomCursor(child: HomeBody()),
     );
   }
 }

@@ -11,67 +11,52 @@ class ProjectsGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double deviceWidth = context.mediaQueryWidth;
+    final bool isMobileOrTablet =
+        deviceWidth < DeviceType.smallScreenLaptop.getMinWidth();
+
+    if (isMobileOrTablet) {
+      return ListView.separated(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        itemCount: AppConstants.projects.length,
+        separatorBuilder: (context, index) => const SizedBox(height: 24),
+        itemBuilder: (context, index) =>
+            ProjectItem(project: AppConstants.projects[index]),
+      );
+    }
+
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
+      padding: const EdgeInsets.symmetric(horizontal: 12),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: _getCrossAxisCount(context.mediaQueryWidth),
-        crossAxisSpacing: 16,
-        mainAxisSpacing: 16,
-        mainAxisExtent: _getMainAxisExtent(context.mediaQueryWidth),
+        crossAxisCount: _getCrossAxisCount(deviceWidth),
+        crossAxisSpacing: 24,
+        mainAxisSpacing: 24,
+        mainAxisExtent: _getMainAxisExtent(deviceWidth),
       ),
       itemBuilder: (context, index) {
-        if (context.mediaQueryWidth < DeviceType.mobile.getMaxWidth()) {
-          return ProjectItem(
-            project: AppConstants.projects[index],
-          );
-        } else if (context.mediaQueryWidth < DeviceType.ipad.getMaxWidth()) {
-          return ProjectItem(
-            project: AppConstants.projects[index],
-          );
-        } else if (context.mediaQueryWidth <
-            DeviceType.smallScreenLaptop.getMaxWidth()) {
-          return SizedBox(
-            height: 200,
-            child: ProjectItemWeb(
-              project: AppConstants.projects[index],
-            ),
-          );
-        } else {
-          return SizedBox(
-            height: 200,
-            child: ProjectItemWeb(
-              project: AppConstants.projects[index],
-            ),
-          );
-        }
+        return ProjectItemWeb(project: AppConstants.projects[index]);
       },
       itemCount: AppConstants.projects.length,
     );
   }
 
   int _getCrossAxisCount(double deviceWidth) {
-    int numOfServices = AppConstants.projects.length;
-    if (deviceWidth < DeviceType.mobile.getMaxWidth()) {
-      return 1;
-    } else if (deviceWidth < DeviceType.ipad.getMaxWidth()) {
-      return 1;
-    } else if (deviceWidth < DeviceType.smallScreenLaptop.getMaxWidth()) {
-      return 3;
+    if (deviceWidth < 1100) {
+      return 2;
     } else {
-      return numOfServices > 3 ? 3 : numOfServices;
+      return 3;
     }
   }
 
-  double? _getMainAxisExtent(double deviceWidth) {
-    if (deviceWidth < DeviceType.mobile.getMaxWidth()) {
-      return null;
-    } else if (deviceWidth < DeviceType.ipad.getMaxWidth()) {
-      return deviceWidth;
-    } else if (deviceWidth < DeviceType.smallScreenLaptop.getMaxWidth()) {
-      return 270;
-    } else {
-      return 320;
+  double _getMainAxisExtent(double deviceWidth) {
+    // 400-500 is usually enough for a Row layout with a 160px image
+    if (deviceWidth < 1200) {
+      return 450;
     }
+    return 400; // Larger screens have wider columns, so text is shorter
   }
 }

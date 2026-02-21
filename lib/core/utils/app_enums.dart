@@ -1,4 +1,4 @@
-enum AppBarHeaders { home, aboutMe, projects, contact , resume }
+enum AppBarHeaders { home, aboutMe, experience, projects, contact, resume }
 
 enum AppBarHeadersAxis { horizontal, vertical }
 
@@ -7,5 +7,5 @@ enum DeviceType {
   ipad,
   smallScreenLaptop,
   largeScreenDesktop,
-  extraLargeTV
+  extraLargeTV,
 }

@@ -25,6 +25,19 @@ class IntoActions extends StatelessWidget {
         },
         width: 160,
       ),
+      // context.mediaQueryWidth < DeviceType.ipad.getMaxWidth()
+      //     ? const SizedBox(height: 6)
+      //     : const SizedBox(width: 32),
+      // CustomButton(
+      //   label: AppBarHeaders.experience.getString(),
+      //   icon: Icons.work,
+      //   backgroundColor: AppColors.darkColor,
+      //   borderColor: AppColors.accentColor,
+      //   onPressed: () {
+      //     context.read<HomeBloc>().add(ChangeAppBarHeadersIndex(2));
+      //   },
+      //   width: 160,
+      // ),
       context.mediaQueryWidth < DeviceType.ipad.getMaxWidth()
           ? const SizedBox(height: 6)
           : const SizedBox(width: 32),
@@ -34,7 +47,7 @@ class IntoActions extends StatelessWidget {
         backgroundColor: AppColors.darkColor,
         borderColor: AppColors.primaryColor,
         onPressed: () {
-          context.read<HomeBloc>().add(ChangeAppBarHeadersIndex(2));
+          context.read<HomeBloc>().add(ChangeAppBarHeadersIndex(3));
         },
         width: 160,
       ),
@@ -46,7 +59,7 @@ class IntoActions extends StatelessWidget {
         icon: Icons.document_scanner,
         backgroundColor: AppColors.darkColor,
         onPressed: () {
-          context.read<HomeBloc>().add(ChangeAppBarHeadersIndex(2));
+          // You might want a specific index for resume or just open the link
           var uri =
               "https://drive.google.com/file/d/1jq862BNWWPyQlo-2vM4KIO-hm401QhF0/view";
           html.window.open(uri, '_blank');
@@ -59,9 +72,6 @@ class IntoActions extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: actions,
           )
-        : Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: actions,
-          );
+        : Row(mainAxisAlignment: MainAxisAlignment.start, children: actions);
   }
 }

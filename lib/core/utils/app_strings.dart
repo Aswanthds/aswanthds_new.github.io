@@ -2,13 +2,13 @@ abstract class AppStrings {
   static const String developerName = 'Aswanth';
   static const String helloIM = 'Hello, i’m';
   static const String introMsg =
-      "Flutter developer with +2 years of experience. I have completed many projects that prove my ability to provide creative and high-quality solutions.";
+      "Flutter developer with 1.10 years of professional experience and 1 year of independent project deployment expertise. I build creative, high-quality, and scalable mobile and web solutions.";
   static String aboutMeMsg =
-      "Dedicated and self-taught Flutter Developer with a proven track record of creating high-performance, visually appealing mobile applications for both Android and Web platforms. With my 1 year of expertise in dart and flutter and I can create applications with top-notch user experience. A continuous and self-learner, open to explore new technologies and to further enhance flutter development skills.";
+      "Dedicated Flutter Developer with 1.10 years of professional experience complemented by 1 year of self-taught project deployment expertise. I have a proven track record of creating high-performance, visually appealing applications for both Android and Web. My blend of professional rigor and independent problem-solving allows me to deliver top-notch user experiences and robust architectures.";
   static const String numOfExperience = '2+';
   static const String experienceMsg =
-      'Years of experience, Specialized in building apps, while ensuring a seamless app experience for end users.';
-  static const String skillsIHave = 'Technical Skils';
+      'Combined years of professional and deployment experience, specializing in building seamless, user-centric applications.';
+  static const String skillsIHave = 'Technical Skills';
   static const String featuredProjects = 'Featured projects';
   static const String projectsMsg =
       "I have completed a few main projects and several mini projects to show off my skills and experience.";

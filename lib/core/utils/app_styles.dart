@@ -50,4 +50,9 @@ abstract class AppStyles {
     fontSize: 14,
     fontWeight: FontWeight.w500,
   );
+  static TextStyle s12 = GoogleFonts.josefinSans(
+    color: AppColors.white,
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+  );
 }
